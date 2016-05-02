@@ -5,9 +5,10 @@ include ("account.php") ;
 	        or die ( "Unable to connect to MySQL database" );
 mysql_select_db( $project ); 
 			
-$name = $_GET["Name"]; 
+$location = $_GET["Location"]; 
+$name = $_GET["Name"];
 
-$s = "SELECT * FROM `Animals` WHERE Name = '$name'"; 
+$s = "SELECT *  FROM `Animals` WHERE `Location` = '$location' AND `Name` = '$name'"; 
 
 //1. GET TABLE $t
 ( $t = mysql_query ( $s  )) or die ( mysql_error() );

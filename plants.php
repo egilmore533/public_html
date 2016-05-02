@@ -4,10 +4,11 @@ include ("account.php") ;
 ( $dbh = mysql_connect ( $hostname, $username, $password ) )
 	        or die ( "Unable to connect to MySQL database" );
 mysql_select_db( $project ); 
-			
-$name = $_GET["Name"]; 
+			 
+$location = $_GET["Location"];
+$name = $_GET["Name"];
 
-$s = "SELECT * FROM `Plants` WHERE Name = '$name'"; 
+$s = "SELECT *  FROM `Plants` WHERE `Location` = '$location' AND `Name` = '$name'"; 
 
 //1. GET TABLE $t
 ( $t = mysql_query ( $s  )) or die ( mysql_error() );
